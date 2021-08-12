@@ -23,7 +23,8 @@
 .signup-input {
     height: 50px;
     margin: 10px 0px;
-    padding: 0px 10px;
+    padding: 0px 20px;
+    width: 350px;
     outline: none;
     border: none;
 }
@@ -39,14 +40,40 @@
     color: white;
     background: var(--red);
     margin: 10px 0px;
-    width: 100px;
+    width: 180px;
 }
 
 .signup-input-button:hover {
     background: var(--red-hover)
 }
 
+h4{
+    margin: 10px 0px;
+}
+
 .signup-bottom-gray {
     font-weight: 300;
-    color: gray
+    color: gray;
+    margin-right: 10px;
+}
+
+.signup-bottom-link{
+    cursor: pointer;
+    user-select: none;
+}
+.signup-bottom-link:hover{
+    text-decoration: underline;
+}
+
+@media (max-width:600px) {
+    .signup {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    .signup-input{
+        width: 100%;
+    }
 }

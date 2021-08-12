@@ -13,12 +13,17 @@ const LoginScreen = () => {
        
             <div className="LoginScreen-nav">
                 <img className="nav-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png" alt="logo" />
-                <button onClick={() => {
+               { signin ? (<button onClick={() => {
+                    setSignIn(false)
+                }}
+                    className="LoginScreen-nav-button">
+                    go Back
+                </button>): (<button onClick={() => {
                     setSignIn(true)
                 }}
                     className="LoginScreen-nav-button">
                     sign in
-                </button>
+                </button>)}
             </div>
             
             <div className="loginscreen-content"> 
