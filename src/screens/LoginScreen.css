@@ -1,0 +1,142 @@
+:root{
+    --red:rgb(217,25,33);
+    --red-hover:rgba(217, 25, 31, 0.801);
+}
+
+.LoginScreen{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(https://cdn.hipwallpaper.com/i/98/21/dUyCkp.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.loginscreen-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.LoginScreen-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.LoginScreen-nav-button{
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    color: white;
+    background: var(--red);
+}
+
+.LoginScreen-nav-button:hover{
+    background : var(--red-hover)
+}
+
+.LoginScreen-input-button:hover{
+    background : var(--red-hover)
+}
+
+.loginscreen-content h1{
+    font-size: 3rem;
+    margin: 15px 0px;
+}
+
+.loginscreen-content h2{
+    font-weight: 400;
+    margin: 15px 0px;
+}
+
+.loginscreen-content{
+    z-index: 1;
+    width: 50%;
+    text-align: center;
+}
+
+.loginscreen-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.loginscreen-input-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    text-transform: uppercase;
+    font-size: 10px;
+    height: 50px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    color: white;
+    background: var(--red);
+}
+
+.loginscreen-input-button-icon{
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.loginscreen-input-email{
+    flex: 3;
+    padding: 15px 20px;
+    height: 50px;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.LoginScreen-fade{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    background-image: linear-gradient(
+        to top , 
+        rgba(0,0,0,0.8)0,
+        rgba(0,0,0,0) 60% ,
+         rgba(0,0,0,0.8)100%
+    );
+}
+
+@media (max-width:600px) {
+    .loginscreen-content h1{
+        font-size: 2rem;
+    
+    }
+
+    .loginscreen-content h2{
+        font-size: 1rem;
+       
+    }
+    .loginscreen-content{
+       padding: 0px 20px;
+        width: 100%;
+       
+    }
+}
