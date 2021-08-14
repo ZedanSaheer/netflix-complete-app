@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState} from 'react'
 import './ProfileScreen.css'
 import Nav from '../Nav'
 import { useSelector } from 'react-redux'
@@ -8,11 +8,14 @@ import ProfileScreenPlans from './ProfileScreenPlans'
 
 const ProfileScreen = () => {
 
-    const user = useSelector(selectUser)
+    const user = useSelector(selectUser);
+    console.log(selectUser);
+    const [subscribedUser, setSubUser] = useState(false);
 
     return (
         <div className="profilescreen">
-            <Nav />
+            <Nav subscribedUser={subscribedUser}/>
+
             <div className="profilescreen-body">
                 <div className="profilescreen-box">
                     <h1>Edit profile</h1>
@@ -22,7 +25,7 @@ const ProfileScreen = () => {
                         </div>
                         <div className="profilescreen-box-content">
                             <div className="profilescreen-box-content-email"><span className="profilescreen-box-content-email-text">{user.email}</span></div>
-                            <ProfileScreenPlans />
+                            <ProfileScreenPlans  setUser = {setSubUser}/>
                         </div>
                     </div>
                     <div className="profilescreen-box-content-button">

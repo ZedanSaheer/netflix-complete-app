@@ -23,3 +23,10 @@
 .nav-avatar{
     width: 40px;
 }
+
+@media (max-width:600px) {
+    .nav-logo{
+        width: 100px;
+        height: 30px;
+    }
+}

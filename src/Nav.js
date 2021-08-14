@@ -2,7 +2,7 @@ import React , {useState , useEffect} from 'react'
 import { useHistory } from 'react-router-dom'
 import './Nav.css'
 
-const Nav = () => {
+const Nav = ({subscribedUser}) => {
 
     const [show, handleShow] = useState(false)
     const history = useHistory();
@@ -20,8 +20,8 @@ const Nav = () => {
 
     return (
         <div className={`nav ${show && "nav-black" }`}>
-                <img onClick = {()=>{
-                    history.push("/")}}
+                <img onClick = {subscribedUser? ()=>{
+                    history.push("/")} : null}
                     className="nav-logo"
                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png" alt="logo"/>
                 <img onClick = {()=>{

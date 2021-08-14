@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { selectUser } from '../features/counter/userSlice'
 import { loadStripe } from '@stripe/stripe-js'
 
-const ProfileScreenPlans = () => {
+const ProfileScreenPlans = ({setUser}) => {
 
     const loadCheckout = async (priceId) => {
         const docRef = await db
@@ -45,12 +45,13 @@ const ProfileScreenPlans = () => {
                 querySnapshot.forEach(async (subscription) => {
                     setSubscription({
                         role: subscription.data().role,
-                        currentfPeriodStart: subscription.data().current_period_start,
+                        currentPeriodStart: subscription.data().current_period_start.seconds,
                         currentPeriodEnd: subscription.data().current_period_end,
                     })
+                    setUser(subscription);
                 })
             })
-    }, [user.uid])
+    }, [user.uid , setUser])
 
     useEffect(() => {
         db.collection("products")
@@ -68,22 +69,20 @@ const ProfileScreenPlans = () => {
                         }
                     })
                 })
-                setProducts(products)
+                setProducts(products);
             })
 
     }, [])
 
-    console.log(new Date(subscription?.current_period_end).toLocaleDateString());
-
     return (
         <>
             <div className="profilescreen-box-content-plan-title">
-                <h3>Plans</h3>
+                <h3>Plans (Current Plan : {subscription ? products.name: "No Active Plans"} )</h3>
             </div>
 
             <div className="profilescreen-box-content-plan-date">
 
-                {subscription && (<h4> Renewal Date : {new Date(subscription?.current_period_end).toLocaleDateString()} </h4>)}
+                {subscription && (<h4> Renewal Date : {new Date(subscription?.currentPeriodEnd*1000).toLocaleDateString()} </h4>)}
 
             </div>
 

@@ -76,4 +76,9 @@
     .banner-desc{
         width: 90%;
     }
+    .banner-title{
+        font-size: 2rem;
+        margin: 10px 0px;
+        text-transform: capitalize;
+    }
 }
