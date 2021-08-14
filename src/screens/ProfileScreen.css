@@ -96,6 +96,15 @@
     font-size: 15px;
 }
 
+.profilescreen-box-content-current-plan-detail-name{
+    display: flex;
+    flex-direction: column;
+}
+.profilescreen-box-content-plan-detail-name{
+    display: flex;
+    flex-direction: column;
+}
+
 .profile-screen-subscribe {
     text-transform: capitalize;
     font-size: 12px;
