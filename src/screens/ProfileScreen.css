@@ -1,0 +1,153 @@
+.profilescreen {
+    width: 100%;
+    min-height: 100vh;
+    background: #111;
+}
+
+.profilescreen-body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profilescreen-box {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 600px;
+    padding: 10px;
+}
+
+.profilescreen-box h1 {
+    color: white;
+    font-size: 3rem;
+    text-transform: capitalize;
+    text-align: left;
+    margin: 10px 0px;
+}
+
+.profilescreen-box-container {
+    display: flex;
+    color: white;
+    align-items: flex-start;
+    border-top: 1px solid gray;
+    margin: 10px 0px;
+}
+
+.profilescreen-box-content-button {
+    width: 100%;
+}
+
+.profilescreen-box-icon {
+    flex: 1;
+    padding: 10px;
+}
+
+.profilescreen-avatar {
+    width: 100px;
+}
+
+.profilescreen-box-content {
+    flex: 3;
+    padding: 10px;
+}
+
+.profilescreen-box-content-email {
+    background: gray;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.profilescreen-box-content-plan-date h4 {
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.profilescreen-box-content-plans {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    align-items: center;
+}
+
+.profilescreen-box-content-plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.profilescreen-box-content-plan-detail {
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+.profilescreen-box-content-current-plan-detail {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.profile-screen-subscribe {
+    text-transform: capitalize;
+    font-size: 12px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-weight: 100;
+    color: white;
+    background: var(--red);
+    margin: 10px 0px;
+}
+
+.profile-screen-subscribe:hover {
+    background: var(--red-hover);
+}
+
+.profile-screen-current-subscribe {
+    width: 150px;
+    padding: 10px;
+    text-transform: capitalize;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    font-weight: 100;
+    color: white;
+    background: gray;
+    margin: 10px 0px;
+}
+
+.profile-screen-current-subscribe:hover {
+    background: rgba(128, 128, 128, 0.815);
+}
+
+.profilescreen-signout {
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    color: white;
+    background: var(--red);
+    margin: 10px 0px;
+    width: 100%;
+}
+
+.profilescreen-signout:hover {
+    background: var(--red-hover);
+}
+
+@media (max-width:500px) {
+    .profilescreen-box {
+        width: 100%;
+    }
+}
