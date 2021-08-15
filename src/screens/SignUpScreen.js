@@ -2,12 +2,13 @@ import React, { useRef , useState} from 'react'
 import { auth } from '../firebase'
 import './SignUpScreen.css'
 
-const SignUpScreen = () => {
+const SignUpScreen = ({setNewUser}) => {
 
     const emailRef = useRef(null)
     const passwordRef = useRef(null)
-    const nameRef = useRef(null)
+    const nameRef = useRef("")
     const [signup, setSignUp] = useState(false)
+
 
    const enableSignUp = ()=>{
         if(signup){
@@ -19,28 +20,35 @@ const SignUpScreen = () => {
 
     const register = (e) => {
         e.preventDefault();
-        
+
+        setNewUser(nameRef.current.value);
+
+        console.log(auth); 
+
         auth.createUserWithEmailAndPassword(
             emailRef.current.value, passwordRef.current.value
         ).then((authUser) => {
-            console.log(authUser.displayName)
+
             authUser.user.updateProfile({
                 displayName : nameRef.current.value
             })
+
+
 
         }).catch((error) => {
             alert(error.message);
         })
     }
 
+
+
     const signIn = (e) => {
         e.preventDefault();
         auth.signInWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
             .then((authUser) => {
-                console.log(authUser);
-                authUser.user.updateProfile({
-                    displayName : nameRef.current.value
-                })
+
+                setNewUser(authUser.user.displayName);
+              
             }).catch((error) => {
                 alert(error.message)
             })
@@ -50,7 +58,7 @@ const SignUpScreen = () => {
         <div className="signup">
             <form>
                 <h1>sign in</h1>
-               { signup? <input type="text" ref={nameRef} placeholder="Please enter your name" className="signup-input" required /> : null}
+               { signup && <input type="text" ref={nameRef} placeholder="Please enter your name" className="signup-input" required />}
                 <input type="email" ref={emailRef} placeholder="Email Address" className="signup-input" required/>
                 <input type="password" ref={passwordRef} placeholder="Password" className="signup-input" />
                 {signup ?  <button type="submit" className="signup-input-button" onClick={register}>Sign up</button>  : <button type="submit" className="signup-input-button" onClick={signIn}>Sign in</button> }

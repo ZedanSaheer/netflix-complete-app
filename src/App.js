@@ -1,4 +1,4 @@
-import React , {useEffect} from 'react';
+import React , {useEffect , useState} from 'react';
 import './App.css';
 import HomeScreen from './screens/HomeScreen';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -12,13 +12,15 @@ import ProfileScreen from './screens/ProfileScreen';
 const App = () => {
 
   const user = useSelector(selectUser) ;
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const [newuser, setNewUser] = useState("")
+
 
   useEffect(() => {
     //login
     const unsubscribe = auth.onAuthStateChanged(
       (userAuth) => {
-        console.log(userAuth);
+     
       if(userAuth){
          dispatch(login({
            uid : userAuth.uid,
@@ -38,10 +40,10 @@ const App = () => {
     <div className="app">
       <Router>
       {!user?
-       (<LoginScreen />):
+       (<LoginScreen setNewUser = {setNewUser}/>):
         (<Switch>
         <Route path= '/profile'>
-           <ProfileScreen />
+           <ProfileScreen newuser = {newuser}/>
         </Route>
           <Route path="/">
            <HomeScreen />

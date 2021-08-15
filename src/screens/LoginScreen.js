@@ -3,7 +3,7 @@ import './LoginScreen.css'
 import { BsChevronRight } from "react-icons/bs";
 import SignUpScreen from './SignUpScreen'
 
-const LoginScreen = () => {
+const LoginScreen = ({setNewUser}) => {
 
     const [signin, setSignIn] = useState(false);
 
@@ -27,7 +27,7 @@ const LoginScreen = () => {
             </div>
             
             <div className="loginscreen-content"> 
-             {signin ? <SignUpScreen /> : (<> <h1>Unlimited movies , TV shows and more.</h1>
+             {signin ? <SignUpScreen setNewUser={setNewUser} /> : (<> <h1>Unlimited movies , TV shows and more.</h1>
                 <h2>Watch anywhere. Cancel anytime.</h2>
                 <h2>Ready to watch? Enter your email to create or restart your membership.</h2>
                 <div className="loginscreen-input">

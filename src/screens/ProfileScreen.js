@@ -6,16 +6,17 @@ import { selectUser } from '../features/counter/userSlice'
 import { auth } from '../firebase'
 import ProfileScreenPlans from './ProfileScreenPlans'
 
-const ProfileScreen = () => {
+const ProfileScreen = ({newuser}) => {
 
     const user = useSelector(selectUser);
-    console.log(selectUser);
     const [subscribedUser, setSubUser] = useState(false);
+
+    console.log(newuser);
 
     return (
         <div className="profilescreen">
             <Nav subscribedUser={subscribedUser}/>
-
+            {newuser !== "" && <div className="popup-container"><div className="welcome-user slide-right "><span className="welcome-user-text">Hello<span className="welcome-user-name"> {newuser}!</span>Welcome to zedan's app</span></div></div>}
             <div className="profilescreen-body">
                 <div className="profilescreen-box">
                     <h1>Edit profile</h1>

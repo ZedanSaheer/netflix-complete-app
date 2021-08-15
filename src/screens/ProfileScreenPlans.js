@@ -46,7 +46,7 @@ const ProfileScreenPlans = ({setUser}) => {
                     setSubscription({
                         role: subscription.data().role,
                         currentPeriodStart: subscription.data().current_period_start.seconds,
-                        currentPeriodEnd: subscription.data().current_period_end,
+                        currentPeriodEnd: subscription.data().current_period_end.seconds,
                     })
                     setUser(subscription);
                 })
@@ -77,7 +77,7 @@ const ProfileScreenPlans = ({setUser}) => {
     return (
         <>
             <div className="profilescreen-box-content-plan-title">
-                <h3>Plans (Current Plan : {subscription ? products.name: "No Active Plans"} )</h3>
+                <h3 className="current-plans">Plans (Current Plan : {subscription && subscription?.role} )</h3>
             </div>
 
             <div className="profilescreen-box-content-plan-date">

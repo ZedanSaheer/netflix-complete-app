@@ -2,6 +2,7 @@
     width: 100%;
     min-height: 100vh;
     background: #111;
+    position: relative;
 }
 
 .profilescreen-body {
@@ -155,8 +156,113 @@
     background: var(--red-hover);
 }
 
+.current-plans{
+    text-transform: capitalize;
+}
+
+.popup-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 20px;
+    padding-right: 200px;
+}
+
+.welcome-user{
+    width: 400px;
+    padding: 10px;
+    background: var(--red-hover);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border-left: 15px solid white;
+    text-transform: capitalize;
+    color: white;
+    padding-right: 5px;
+}
+
+.welcome-user-text{
+    text-transform: capitalize;
+    font-weight: 300;
+}
+.welcome-user-name{
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0px 5px;
+}
+
+.slide-right {
+	-webkit-animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-right {
+    0% {
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+    }
+    100% {
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+    }
+  }
+  @keyframes slide-right {
+    0% {
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+    }
+    100% {
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+    }
+  }
+  
+
 @media (max-width:500px) {
     .profilescreen-box {
         width: 100%;
+    }
+
+    .popup-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        padding-bottom: 80px;
+        padding-top: 0px;
+        padding-right: 0px;
+    }
+    
+    .welcome-user{
+        padding: 10px;
+        width: 300px;
+        background: var(--red-hover);
+        align-items: center;
+        border-radius: 5px;
+        border-left: 15px solid white;
+        position: relative;
+        left: 50px;
+    }
+    
+    .welcome-user-text{
+        text-transform: capitalize;
+        font-weight: 300;
+
+    }
+    .welcome-user-name{
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 0px 5px;
+        word-wrap: break-word;
     }
 }
